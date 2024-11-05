@@ -25020,8 +25020,7 @@ Children:
                   - Name: Style
                     Type: BaseDataVariableType
                     DataType: String
-                    ModellingRule: Optional
-                    Value: "HistogramChartStyle1"
+                    Value: "Default"
                   - Name: Height
                     Type: BaseVariableType
                     DataType: Size
@@ -25031,7 +25030,6 @@ Children:
                     Type: BaseVariableType
                     DataType: Size
                     ModellingRule: Optional
-                    Value: 15.0
                   - Name: BottomMargin
                     Type: BaseVariableType
                     DataType: Size

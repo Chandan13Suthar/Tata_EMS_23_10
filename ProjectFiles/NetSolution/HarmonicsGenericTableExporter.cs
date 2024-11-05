@@ -15,7 +15,7 @@ using FTOptix.SQLiteStore;
 using FTOptix.Core;
 #endregion
 
-public class GenericTableExporter1 : BaseNetLogic
+public class HarmonicsGenericTableExporter : BaseNetLogic
 {
     [ExportMethod]
     public void Export()

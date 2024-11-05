@@ -10215,6 +10215,11 @@ Children:
       DataType: FontWeightEnum
       ModellingRule: Optional
       Value: 800
+    - Name: WordWrap
+      Type: BaseDataVariableType
+      DataType: Boolean
+      ModellingRule: Optional
+      Value: true
   - Name: MeterAlias1
     Type: Alias
     DataType: NodeId

@@ -5664,6 +5664,22 @@ Children:
                     Type: BaseDataVariableType
                     DataType: String
                     Value: "Export"
+                - Name: MethodContainer5
+                  Type: BaseObjectType
+                  Children:
+                  - Name: ns=5;ObjectPointer
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: "/Objects/Tata_EMS_23_10/NetLogic/ReportGenerationDialogLogic"
+                    Children:
+                    - Name: Kind
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: ns=5;Method
+                    Type: BaseDataVariableType
+                    DataType: String
+                    Value: "Dialog"
               - Name: EventArguments
                 Type: MouseClickEvent
                 Children:
@@ -6059,6 +6075,22 @@ Children:
                     Type: BaseDataVariableType
                     DataType: String
                     Value: "Export"
+                - Name: MethodContainer5
+                  Type: BaseObjectType
+                  Children:
+                  - Name: ns=5;ObjectPointer
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: "/Objects/Tata_EMS_23_10/NetLogic/ReportGenerationDialogLogic"
+                    Children:
+                    - Name: Kind
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: ns=5;Method
+                    Type: BaseDataVariableType
+                    DataType: String
+                    Value: "Dialog"
               - Name: EventArguments
                 Type: MouseClickEvent
                 Children:
@@ -30770,6 +30802,22 @@ Children:
                     Type: BaseDataVariableType
                     DataType: String
                     Value: "Export"
+                - Name: MethodContainer1
+                  Type: BaseObjectType
+                  Children:
+                  - Name: ns=5;ObjectPointer
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: "/Objects/Tata_EMS_23_10/NetLogic/ReportGenerationDialogLogic"
+                    Children:
+                    - Name: Kind
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: ns=5;Method
+                    Type: BaseDataVariableType
+                    DataType: String
+                    Value: "Dialog"
               - Name: EventArguments
                 Type: MouseClickEvent
                 Children:
@@ -38802,7 +38850,7 @@ Children:
               Type: BaseVariableType
               DataType: Size
               ModellingRule: Optional
-              Value: 7.0
+              Value: 10.0
             - Name: Width
               Type: BaseVariableType
               DataType: Size
@@ -39217,7 +39265,7 @@ Children:
               Type: BaseVariableType
               DataType: Size
               ModellingRule: Optional
-              Value: 20.0
+              Value: 19.0
             - Name: Height
               Type: BaseVariableType
               DataType: Size
@@ -39262,7 +39310,7 @@ Children:
                   - Name: ns=5;ObjectPointer
                     Type: NodePointer
                     DataType: NodeId
-                    Value: "/Objects/Commands/VariableCommands"
+                    Value: "/Objects/Tata_EMS_23_10/NetLogic/DateAddUpdateLogic"
                     Children:
                     - Name: Kind
                       Type: PropertyType
@@ -39271,35 +39319,7 @@ Children:
                   - Name: ns=5;Method
                     Type: BaseDataVariableType
                     DataType: String
-                    Value: "Set"
-                  - Name: InputArguments
-                    Type: BaseObjectType
-                    Children:
-                    - Name: VariableToModify
-                      Type: BaseDataVariableType
-                      DataType: VariablePointer
-                      Description: {"NamespaceIndex":5,"TextId":"SetVariableToModifyDescription"}
-                      Value: "/Objects/Tata_EMS_23_10/NetLogic/GenericTableExporter/CSVPath"
-                    - Name: Value
-                      Type: BaseDataVariableType
-                      DataType: AbsoluteResourceUri
-                      Description: {"NamespaceIndex":5,"TextId":"SetValueDescription"}
-                      Children:
-                      - Name: DynamicLink
-                        Type: DynamicLink
-                        DataType: NodePath
-                        Value: "/Objects/Tata_EMS_23_10/Model/Reports/Dailyconsumptionreportpath_As_Excel"
-                        Children:
-                        - Name: Mode
-                          Type: BaseVariableType
-                          DataType: DynamicLinkMode
-                          ModellingRule: Optional
-                          Value: 2
-                    - Name: ArrayIndex
-                      Type: BaseDataVariableType
-                      DataType: UInt32
-                      Description: {"NamespaceIndex":5,"TextId":"SetArrayIndexDescription"}
-                      ValueRank: ScalarOrOneDimension
+                    Value: "DateUpdateTask"
                 - Name: MethodContainer3
                   Type: BaseObjectType
                   Children:
@@ -39323,16 +39343,48 @@ Children:
                       Type: BaseDataVariableType
                       DataType: VariablePointer
                       Description: {"NamespaceIndex":5,"TextId":"SetVariableToModifyDescription"}
-                      Value: "/Objects/Tata_EMS_23_10/Model/Reports/First_Report_Links/ExcelExportQuery"
+                      Value: "/Objects/Tata_EMS_23_10/NetLogic/HarmonicsGenericTableExporter/Query"
                     - Name: Value
                       Type: BaseDataVariableType
                       DataType: String
                       Description: {"NamespaceIndex":5,"TextId":"SetValueDescription"}
                       Children:
-                      - Name: DynamicLink
-                        Type: DynamicLink
-                        DataType: NodePath
-                        Value: "/Objects/Tata_EMS_23_10/Model/Reports/First_Report_Links/ExcelExportQueryRefreshed"
+                      - Name: StringFormatter1
+                        Type: StringFormatter
+                        Children:
+                        - Name: Format
+                          Type: BaseDataVariableType
+                          DataType: LocalizedText
+                          ReferenceType: HasParameter
+                          ModellingRule: Optional
+                          Value: {"LocaleId":"en-US","Text":"SELECT  LocalTimestamp, Jace, Meter, Phase_R_Voltage_THD, Phase_Y_Voltage_THD ,Phase_B_Voltage_THD, Phase_R_Current_THD, Phase_Y_Current_THD, Phase_B_Current_THD  FROM \"Harmonics\" WHERE LocalTimestamp BETWEEN {0:sql_literal} AND {1:sql_literal} AND  Meter = {2:sql_literal}"}
+                        - Name: ns=5;Source0
+                          Type: BaseDataVariableType
+                          DataType: BaseDataType
+                          ReferenceType: HasSource
+                          Children:
+                          - Name: DynamicLink
+                            Type: DynamicLink
+                            DataType: NodePath
+                            Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/DateFrom"
+                        - Name: ns=5;Source1
+                          Type: BaseDataVariableType
+                          DataType: BaseDataType
+                          ReferenceType: HasSource
+                          Children:
+                          - Name: DynamicLink
+                            Type: DynamicLink
+                            DataType: NodePath
+                            Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/DateTo"
+                        - Name: ns=5;Source2
+                          Type: BaseDataVariableType
+                          DataType: BaseDataType
+                          ReferenceType: HasSource
+                          Children:
+                          - Name: DynamicLink
+                            Type: DynamicLink
+                            DataType: NodePath
+                            Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/MeterName"
                     - Name: ArrayIndex
                       Type: BaseDataVariableType
                       DataType: UInt32
@@ -39371,37 +39423,42 @@ Children:
                       DataType: String
                       Description: {"NamespaceIndex":5,"TextId":"SetValueDescription"}
                       Children:
-                      - Name: ConditionalConverter1
-                        Type: ConditionalConverter
+                      - Name: StringFormatter1
+                        Type: StringFormatter
                         Children:
-                        - Name: Condition
+                        - Name: Format
                           Type: BaseDataVariableType
-                          DataType: Boolean
+                          DataType: LocalizedText
+                          ReferenceType: HasParameter
+                          ModellingRule: Optional
+                          Value: {"LocaleId":"en-US","Text":"SELECT  LocalTimestamp, Jace, Meter, Phase_R_Voltage_THD, Phase_Y_Voltage_THD ,Phase_B_Voltage_THD, Phase_R_Current_THD, Phase_Y_Current_THD, Phase_B_Current_THD  FROM \"Harmonics\" WHERE LocalTimestamp BETWEEN {0:sql_literal} AND {1:sql_literal} AND  Meter = {2:sql_literal}"}
+                        - Name: ns=5;Source0
+                          Type: BaseDataVariableType
+                          DataType: BaseDataType
                           ReferenceType: HasSource
                           Children:
                           - Name: DynamicLink
                             Type: DynamicLink
                             DataType: NodePath
-                            Value: "../../../../../../../../Checkbox1/Checked"
-                        - Name: TrueValue
+                            Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/DateFrom"
+                        - Name: ns=5;Source1
                           Type: BaseDataVariableType
-                          DataType: String
-                          ReferenceType: HasParameter
+                          DataType: BaseDataType
+                          ReferenceType: HasSource
                           Children:
                           - Name: DynamicLink
                             Type: DynamicLink
                             DataType: NodePath
-                            Value: "/Objects/Tata_EMS_23_10/Model/Reports/First_Report_Links/ExcelExportQueryRefreshed1"
-                        - Name: FalseValue
+                            Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/DateTo"
+                        - Name: ns=5;Source2
                           Type: BaseDataVariableType
-                          DataType: String
-                          ReferenceType: HasParameter
-                          Value: "/Objects/Tata_EMS_15_10_2024/Model/Reports/First_Report_Links/ExcelExportQueryRefreshed1"
+                          DataType: BaseDataType
+                          ReferenceType: HasSource
                           Children:
                           - Name: DynamicLink
                             Type: DynamicLink
                             DataType: NodePath
-                            Value: "/Objects/Tata_EMS_23_10/Model/Reports/First_Report_Links/ExcelExportQueryRefreshed"
+                            Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/MeterName"
                     - Name: ArrayIndex
                       Type: BaseDataVariableType
                       DataType: UInt32
@@ -39430,7 +39487,7 @@ Children:
                       Type: BaseDataVariableType
                       DataType: VariablePointer
                       Description: {"NamespaceIndex":5,"TextId":"SetVariableToModifyDescription"}
-                      Value: "/Objects/Tata_EMS_23_10/Model/Reports/Dailyconsumptionreportpath_As_Excel"
+                      Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/HarmonicsReportPath"
                     - Name: Value
                       Type: BaseDataVariableType
                       DataType: String
@@ -39444,7 +39501,7 @@ Children:
                           DataType: LocalizedText
                           ReferenceType: HasParameter
                           ModellingRule: Optional
-                          Value: {"LocaleId":"en-US","Text":"D:\\Daily_Energy_Reports\\Daily_Consumption_Report_{0}_{1}_{2}_{3}_{4}_{5}.csv"}
+                          Value: {"LocaleId":"en-US","Text":"D:\\Harmonics\\Harmonics_Report_{0}_{1}_{2}_{3}_{4}_{5}.csv"}
                         - Name: ns=5;Source0
                           Type: BaseDataVariableType
                           DataType: BaseDataType
@@ -39510,7 +39567,7 @@ Children:
                   - Name: ns=5;ObjectPointer
                     Type: NodePointer
                     DataType: NodeId
-                    Value: "/Objects/Tata_EMS_23_10/NetLogic/GenericTableExporter"
+                    Value: "/Objects/Tata_EMS_23_10/NetLogic/HarmonicsGenericTableExporter"
                     Children:
                     - Name: Kind
                       Type: PropertyType
@@ -39520,6 +39577,55 @@ Children:
                     Type: BaseDataVariableType
                     DataType: String
                     Value: "Export"
+                - Name: MethodContainer6
+                  Type: BaseObjectType
+                  Children:
+                  - Name: ns=5;ObjectPointer
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: "/Objects/Commands/VariableCommands"
+                    Children:
+                    - Name: Kind
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: ns=5;Method
+                    Type: BaseDataVariableType
+                    DataType: String
+                    Value: "Set"
+                  - Name: InputArguments
+                    Type: BaseObjectType
+                    Children:
+                    - Name: VariableToModify
+                      Type: BaseDataVariableType
+                      DataType: VariablePointer
+                      Description: {"NamespaceIndex":5,"TextId":"SetVariableToModifyDescription"}
+                      Value: "/Objects/Tata_EMS_23_10/Model/ReportPanelVisibility"
+                    - Name: Value
+                      Type: BaseDataVariableType
+                      DataType: Boolean
+                      Description: {"NamespaceIndex":5,"TextId":"SetValueDescription"}
+                    - Name: ArrayIndex
+                      Type: BaseDataVariableType
+                      DataType: UInt32
+                      Description: {"NamespaceIndex":5,"TextId":"SetArrayIndexDescription"}
+                      ValueRank: ScalarOrOneDimension
+                - Name: MethodContainer5
+                  Type: BaseObjectType
+                  Children:
+                  - Name: ns=5;ObjectPointer
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: "/Objects/Tata_EMS_23_10/NetLogic/ReportGenerationDialogLogic"
+                    Children:
+                    - Name: Kind
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: ns=5;Method
+                    Type: BaseDataVariableType
+                    DataType: String
+                    Value: "Dialog"
               - Name: EventArguments
                 Type: MouseClickEvent
                 Children:
@@ -39861,6 +39967,10 @@ Children:
               Type: BaseVariableType
               DataType: Size
               ModellingRule: Optional
+            - Name: Visible
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ModellingRule: Optional
           - Name: Aggregationselection
             Type: ComboBox
             Children:
@@ -39961,7 +40071,6 @@ Children:
             - Name: Visible
               Type: BaseDataVariableType
               DataType: Boolean
-              Value: true
             - Name: DisplayValuePath
               Type: BaseDataVariableType
               DataType: LocalizedText
@@ -40440,7 +40549,7 @@ Children:
               Type: BaseVariableType
               DataType: Size
               ModellingRule: Optional
-              Value: 49.0
+              Value: 50.0
             - Name: Width
               Type: BaseVariableType
               DataType: Size
@@ -40611,222 +40720,6 @@ Children:
               DataType: Size
               ModellingRule: Optional
               Value: 30.0
-          - Name: Label1
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/MeterName"
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 571.0
-            - Name: TopMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 90.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 258.0
-            - Name: Height
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 30.0
-            - Name: TextHorizontalAlignment
-              Type: BaseVariableType
-              DataType: TextHorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: TextVerticalAlignment
-              Type: BaseVariableType
-              DataType: TextVerticalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: FontWeight
-              Type: BaseDataVariableType
-              DataType: FontWeightEnum
-              ModellingRule: Optional
-              Value: 700
-            - Name: Visible
-              Type: BaseDataVariableType
-              DataType: Boolean
-              Value: true
-            - Name: FontFamily
-              Type: BaseDataVariableType
-              DataType: Font
-              ModellingRule: Optional
-          - Name: Label7
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/DateFrom"
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 729.0
-            - Name: TopMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 90.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 258.0
-            - Name: Height
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 30.0
-            - Name: TextHorizontalAlignment
-              Type: BaseVariableType
-              DataType: TextHorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: TextVerticalAlignment
-              Type: BaseVariableType
-              DataType: TextVerticalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: FontWeight
-              Type: BaseDataVariableType
-              DataType: FontWeightEnum
-              ModellingRule: Optional
-              Value: 700
-            - Name: Visible
-              Type: BaseDataVariableType
-              DataType: Boolean
-              Value: true
-            - Name: FontFamily
-              Type: BaseDataVariableType
-              DataType: Font
-              ModellingRule: Optional
-          - Name: Label8
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "/Objects/Tata_EMS_23_10/Model/Reports/HarmonicsReport/DateTo"
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 919.0
-            - Name: TopMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 90.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 258.0
-            - Name: Height
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 30.0
-            - Name: TextHorizontalAlignment
-              Type: BaseVariableType
-              DataType: TextHorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: TextVerticalAlignment
-              Type: BaseVariableType
-              DataType: TextVerticalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: FontWeight
-              Type: BaseDataVariableType
-              DataType: FontWeightEnum
-              ModellingRule: Optional
-              Value: 700
-            - Name: Visible
-              Type: BaseDataVariableType
-              DataType: Boolean
-              Value: true
-            - Name: FontFamily
-              Type: BaseDataVariableType
-              DataType: Font
-              ModellingRule: Optional
-          - Name: Label9
-            Type: Label
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "../../../DataGrid1/Query"
-            - Name: LeftMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 1.0
-            - Name: TopMargin
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 110.0
-            - Name: Width
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 1798.0
-            - Name: Height
-              Type: BaseVariableType
-              DataType: Size
-              ModellingRule: Optional
-              Value: 60.0
-            - Name: TextHorizontalAlignment
-              Type: BaseVariableType
-              DataType: TextHorizontalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: TextVerticalAlignment
-              Type: BaseVariableType
-              DataType: TextVerticalAlignment
-              ModellingRule: Optional
-              Value: 1
-            - Name: FontWeight
-              Type: BaseDataVariableType
-              DataType: FontWeightEnum
-              ModellingRule: Optional
-              Value: 700
-            - Name: Visible
-              Type: BaseDataVariableType
-              DataType: Boolean
-              Value: true
-            - Name: FontFamily
-              Type: BaseDataVariableType
-              DataType: Font
-              ModellingRule: Optional
         - Name: Label1
           Type: Label
           Children:

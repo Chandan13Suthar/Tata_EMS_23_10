@@ -1400,21 +1400,13 @@ Children:
         Type: BaseDataVariableType
         DataType: Color
         Value: "#000000"
-    - Name: HistogramChartStyle1
-      Type: HistogramChartStyle
-      Children:
-      - Name: TextColor
-        Type: BaseDataVariableType
-        DataType: Color
-        Value: "#2a3c46"
-      - Name: FontWeight
-        Type: BaseDataVariableType
-        DataType: FontWeightEnum
-        Value: 700
       - Name: Spacing
         Type: BaseDataVariableType
         DataType: Size
-        Value: 20.0
+      - Name: FontSize
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: 12.0
   - Name: LabelStyles
     Type: BaseObjectType
     Children:
